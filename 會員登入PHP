@@ -1,0 +1,183 @@
+<?php error_reporting(0); ?>
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<title>尋夢咖啡館會員中心</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="alternate" hreflang="zh-Hant" href="#">
+	<link rel="shortcut icon"href="./images/coffeelogo.ico">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/custom2.css" type="text/css">
+	<style type="text/css">
+		span.error {color: red }
+		.sm { margin-left: -5%;}
+		input.btn.btn-light.border.mr-2 { width: 58%;}/*按鈕寬度*/
+	</style>
+	<script type="text/javascript">
+		function abc(){
+			if(document.send.account.value==""){
+				alert('未輸入帳號');
+				document.send.account.focus();
+				return false;
+			}
+			if(document.send.pass.value==""){
+				alert('未輸入密碼');
+				document.send.pass.focus();
+				return false;
+			}
+		}
+	</script> 		
+	<script src='https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.10'></script>
+</head>
+<body>
+	<?php
+		$nameErr=$passErr=$ExperErr="";
+		$name=$password=$Experience="";
+		if($_SERVER["REQUEST_METHOD"]=="POST"){
+			if(empty($_POST["name"])){
+				$nameErr="請輸入帳號";
+			}else{
+				//header("Location:1.php"); 
+				$name = test_input($_POST["name"]);
+			}
+		}
+		if($_SERVER["REQUEST_METHOD"]=="POST"){
+			if(empty($_POST["password"])){
+				$passErr="請輸入密碼";
+			}else{
+				//header("Location:1.php"); 
+				$password=test_input($_POST["password"]);
+			}
+		}
+		if($_SERVER["REQUEST_METHOD"]=="POST"){
+			if(empty($_POST["Experience"])){
+				$ExperErr="請輸入密碼";
+			}/*else if (empty($_POST["password"])==empty($_POST["Experience"])) {
+				 echo " <script> alert ('密碼不相同') </script>";
+				 return false;
+			}*/
+			else{
+				//header("Location:1.php"); 
+				$Experience=test_input($_POST["Experience"]);
+			}
+		}
+		function test_input($data) {
+		  $data = trim($data);
+		  $data = stripslashes($data);
+		  $data = htmlspecialchars($data);
+		  return $data;
+		}
+	?>
+	<header class="bg-primary" >
+		<div class="container pt-3 pb-3">
+			<a href="index.html" title="回首頁" alt="回到尋夢咖啡館"><h2 class="text-white font-weight-bold ">尋夢咖啡館會員登入系統</h2></a>
+		</div>
+	</header>
+	<section class="container">
+		<div class="border mt-5 shadow-sm ">
+			<p>
+				<div class="row ">
+					<!--<div class="col-6 col-ml-6">-->
+					<div class="col-sm">	
+						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" autocomplete="on" class="ml-5 " name="reg">
+							會員註冊<br/><br/>
+							帳號: <input type="text" name="name" class="btn btn-light border" placeholder="請輸入帳號(英文或數字)" onfocus="this.placeholder''">
+							<span class="error">*<?php echo $nameErr;?></span><br/><br/>
+							密碼: <input type="password" name="password" id="pwd2" class="btn btn-light border">
+							<span class="error">*<?php echo $passErr;?></span><br/><br/>
+							再次確認: <input type="password" name="Experience" id="pwd3" class="btn btn-light border mr-2" onkeyup="validate1()">
+							<span class="error" id="cherr">*<?php echo $ExperErr;?></span><br/>
+							<input type="submit" value="送出" class="btn btn-danger mt-3 ml-5">
+							<input type="reset" value="清理" class="btn btn-danger ml-3 mt-3">
+							<!--<div class="bottom mt-3"></div>
+							<p class="ml-5 center">其他註冊方式</p>-->
+							<?php
+								if(eregi("[^a-zA-Z0-9]",$_POST['name'])){
+								echo "<font color=red size=2><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">您註冊的【帳號】格式不正確！只能使用英文與數字。</font><br><a href=javascript:history.back(1)><font size=2><BR><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">回上一頁</font></a>";
+								exit();
+								}
+							?>
+							<?php 
+								echo "<br/>";
+								//echo "帳號 :";
+								echo "帳號 : " .$name;
+								echo "<br/>";
+								//echo "密碼 :";
+								echo "密碼 : " .$password;
+								echo "<br/>";
+							?>
+		
+						</form>
+
+					</div>
+					<div class="col-1 bor">
+					</div>	
+					<!--<div class="col-4">-->
+					<div class="col-sm sm">	
+						<form action="1.php" name="send" method="POST" autocomplete="on" class="ml-5"  onsubmit="return abc();">
+							會員登入<br/><br/>
+							帳號登入: <input type="text" name="account" id="acc" class="btn btn-light border" placeholder="請輸入帳號(英文或數字)" onfocus="this.placeholder''"><!--onfocus="this.placeholder 不顯示''"-->
+							<span class="error">*<?php echo $accErr;?></span><br/><br/>
+							密碼輸入: <input type="password" name="pass" id="pwd" class="btn btn-light border">
+							<span class="error">*<?php echo $pass2Err;?></span><br/><br/>
+							確認密碼: <input type="password" name="verify" id="pwd1" class="btn btn-light border" onkeyup="validate()">
+							<span class="error" id="cherr2">*<?php echo $verErr;?></span><br/>
+							<input type="submit" value="送出" class="btn btn-danger mt-3 ml-5">
+							<input type="reset" value="清理" class="btn btn-danger ml-3 mt-3">
+							<a href="#" class="ml-3">忘記密碼</a>
+							<div class="bottom1 mt-3"></div>
+							<p class="ml-5 center">其他登入方式</p>
+							<script>
+								/*會員登入密碼驗證*/
+								function validate1(){
+									var pwd2=$("#pwd2").val();
+									var pwd3=$("#pwd3").val();
+									//比對資料
+									if(pwd2==pwd3){	// || acc==[^a-zA-Z0-9]
+										$("#cherr").html("正確");
+									}/*lse if(acc!=""&&acc==[^a-zA-Z0-9]){
+										$("#cherr").html("密碼相符");
+									}*/else{
+										$("#cherr").html("錯誤");
+										//prompt ("text","defaultText");
+									}
+								}
+								/*會員註冊密碼驗證*/
+								function validate(){
+									var pwd=$("#pwd").val();
+									var pwd1=$("#pwd1").val();
+									var acc=$("#acc").val();
+									//比對資料
+									if(pwd==pwd1){	// || acc==[^a-zA-Z0-9]
+										$("#cherr2").html("正確");
+									}/*lse if(acc!=""&&acc==[^a-zA-Z0-9]){
+										$("#cherr").html("密碼相符");
+									}*/else{
+										$("#cherr2").html("錯誤");
+										//prompt ("text","defaultText");
+									}
+								}
+								
+							</script>
+
+						</form>
+					</div>	
+				</div>	
+			</p>
+	</section>
+<!--bootstrap js檔-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126092980-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-126092980-1');
+	</script>
+</body>
+</html>
