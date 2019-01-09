@@ -1,6 +1,5 @@
 body { background: #ffeaf3;}
 ol.carousel-indicators { display: none;}
-.carousel-control-next, .carousel-control-prev{opacity: 0.6}
 ol.carousel-indicators.ci { position: absolute; top: 35px;  display: flex;}
 /*以下是css愛心*/
 .carousel-indicators .active{/*讓心跳動*/
@@ -135,16 +134,50 @@ object.coffee {  width: 26%;  position: absolute;  top: 80px;  left: 50%;  anima
 .row.shadow-sm.pb-3.rounded { background: rgba(0,0,0,.075);height: 330px !important;}
  section.container-fluid.new-bgimg.facia{
     background-image: url(../images/cupcake-2749196_640.jpg); background-repeat: no-repeat;  background-size: cover;  background-attachment: fixed;  background-position: center;
-    height: 625px;
+    height: 600px;
 }
 section.container-fluid.new-bgimg {  background: #fff;  height: 450px;}/*新品上市背景區塊*/
 img.ten {  height: 50%;}
 .rwd-btn{display: none;}
-.row.shadow-sm.pb-3.rounded.height-box { height: 500px !important;}
-img.ten2 { height: 300px;}
+.row.shadow-sm.pb-3.rounded.height-box { height: 460px !important;}
+img.ten2 { height: 255px;}
 p.nav-link.font-weight-bold.mb-2.footer-title { font-size: 14px; line-height: 6PX; letter-spacing: 1px;}
-
-
+.card.h-100.hood {
+    padding: 0;
+    position: relative;
+}
+.cover {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+}
+.cover:hover {
+	opacity: 1;
+    background: rgba(0,0,0,.5);
+    transition: all 0.2s ease-in-out;
+}
+.text-cover {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    padding: 0 0 5px 3px;
+    font-weight: 400;
+}
+.text-cover-little {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+.cove-hood {
+    text-align: center;
+    padding-top: 10%;
+    color: #fff;
+}
+object.d-block.w-100.cover-img {
+    margin-top: -45px;
+}
 /*RWD*/
 @media(max-width: 1239px){
 .Yl-Button1 { margin-left: 1%; margin-top: 7%;}
@@ -170,7 +203,16 @@ section.container-fluid.mt-5 {  margin-top: 13% !important;}
 
 }
 @media(max-width:414px){
-
+.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-3.mt-2.hidden,.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-4.mt-2.hidden { display: none;}
+.container.mt-3.footerno { display: none;}
+section.bgcolor-footer { background: #f3f2f2; top:1230px; position: relative;} /*手機版的回首頁按鈕*/
+section.bgcolor-footer { top: 1500px;}
+.Yl-container {  height: 542px;  top: -23%;}
+.sun_banner { width: 100%;  height: 440px;}
+object.coffee { width: 56%; position: absolute; top: 308px; left: 41%;}
+section.container-fluid.mt-5 {  margin-top: -4% !important;}
+ul.navbar-nav.mr-auto.navbar-right { height: 245px;}
+.Yl-container .Yl-pagination { height: 8px;}
 }
 @media(max-width: 375px){
 footer.container-fluid.new-bg,.container-fluid.new-footer-cf-bg { display: none;}
@@ -182,7 +224,7 @@ footer.container-fluid.new-bg,.container-fluid.new-footer-cf-bg { display: none;
 .carousel-indicators li::after {  position: absolute;  bottom: 88px;  left:-5px !important;  display: inline-block;  width: 100%;  height: 17px !important;
     content: "";}
 .carousel-indicators .active{background: #ffeaf300 ;}
-section.bgcolor-footer { background: #f3f2f2; top: 300px; position: relative;} /*手機版的回首頁按鈕*/
+section.bgcolor-footer { background: #f3f2f2; top:1230px; position: relative;} /*手機版的回首頁按鈕*/
 .sun_banner { height: 300px;  position: relative;  top: -62px;}
 .Yl-container .Yl-wrapper .Yl-slide.Yl-0 .Yl-font0, .Yl-container .Yl-wrapper .Yl-slide.Yl-1 .Yl-font0, .Yl-container .Yl-wrapper .Yl-slide.Yl-2 .Yl-font0, .Yl-font0.fadeInUp.act {
     font-size: 2rem;  margin-top: -5px;}
@@ -204,26 +246,36 @@ object.coffee {
     animation-timing-function: ease-in;
     animation-delay: 0s;
 }
+section.container-fluid.mt-5 {  margin-top: -4% !important;}
+.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-3.mt-2.hidden,.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-4.mt-2.hidden { display: none;}
+section.container-fluid.new-bgimg {
+    margin-top: -61px;
+}
+.container.mt-3.footerno { display: none;}
+.cover { display: none;}
+
 }
 @media(max-width: 320px){
-img.ten { height: 70%;}
 .col-12.col-sm-6.col-md-4.col-lg-4.col-xl-3.mt-2.hidden,.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-4.mt-2.hidden { display: none;}
 .row.shadow-sm.pb-3.rounded { height:370px !important}
 p.text-center.mt-3 { margin-top: -2rem !important; margin-left: -1rem !important;}
 .border-bottom.left {width: 20%;}
 .border-bottom.right { width: 20%; left: 77%;}
-section.bgcolor-footer { top:1143px;}
+section.bgcolor-footer { top:1100px;}
 section.container-fluid.new-bgimg { margin-top: -20%;}
 .Yl-font1.fadeInUp.act.r3 { margin: 10% auto !important;}/*產品介紹圖第四頁(文字)*/
 .Yl-font0.fadeInUp.act{margin: 0px auto!important;}/*產品介紹圖第四頁*/
 .Yl-container .Yl-pagination span { width: 3%; height: 90%;}
 p.text-center.mt-3.rwd-btn { display: block;}
 p.text-center.mt-3{display: none;}
-.text-center.pt-3.pb-1.font-weight-bold.text-facia { margin-top: 26px;}
+.text-center.pt-3.pb-1.font-weight-bold.text-facia { margin-top: 0px;}
 .card-body { z-index: 9999;}
 img.ten2 { height: 190px;}
 .row.shadow-sm.pb-3.rounded.height-box { height: 330px !important;}
-section.container-fluid.new-bgimg.facia {  height: 490px;}
+section.container-fluid.new-bgimg.facia {  height: 420px;}
 object.coffee { width: 57%;  top: 146px;  left: 45%;}
 .Yl-Button1 { margin-top: 15%;}
+.cover { display: none;}
+.card.h-100.hood { height: 85% !important;}
+img.ten { height: 63%;}
 }
