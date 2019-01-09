@@ -1,0 +1,8 @@
+input:focus::-webkit-input-placeholder { color:transparent; } input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */ input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+.bor { border-left: 2px dashed #c7c4c4;} /*縱线*/
+.bottom {border-bottom: 2px dashed #c7c4c4;width:77%;}/*下底線*/
+.bottom1 {border-bottom: 2px dashed #c7c4c4;width:83%;}/*下底線*/
+input.btn.btn-light.border { width: 65%;}/*按鈕寬度*/
+p.ml-5.center { padding-left: 10%;}/*其他登入方式*/
+a { text-decoration: none !important;}
+header.bg-primary { background-color: #ecb9b9d6 !important; font-family: cursive; text-shadow: 1px 3px #423d3d;}/*強制改變header的背景顏色字體 陰影*/
