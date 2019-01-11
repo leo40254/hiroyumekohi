@@ -1,6 +1,8 @@
 body { background: #ffeaf3;}
 ol.carousel-indicators { display: none;}
+.carousel-control-next, .carousel-control-prev{opacity: 0.6}
 ol.carousel-indicators.ci { position: absolute; top: 35px;  display: flex;}
+section.container-fluid.mt-5 { margin-top: 147px !important;}/*輪播離導覽列7%*/
 /*以下是css愛心*/
 .carousel-indicators .active{/*讓心跳動*/
 	webkit-animation: heart-jump 1s infinite ease-out;
@@ -134,13 +136,13 @@ object.coffee {  width: 26%;  position: absolute;  top: 80px;  left: 50%;  anima
 .row.shadow-sm.pb-3.rounded { background: rgba(0,0,0,.075);height: 330px !important;}
  section.container-fluid.new-bgimg.facia{
     background-image: url(../images/cupcake-2749196_640.jpg); background-repeat: no-repeat;  background-size: cover;  background-attachment: fixed;  background-position: center;
-    height: 600px;
+    height: 625px;
 }
 section.container-fluid.new-bgimg {  background: #fff;  height: 450px;}/*新品上市背景區塊*/
 img.ten {  height: 50%;}
 .rwd-btn{display: none;}
-.row.shadow-sm.pb-3.rounded.height-box { height: 460px !important;}
-img.ten2 { height: 255px;}
+.row.shadow-sm.pb-3.rounded.height-box { height: 500px !important;}
+img.ten2 { height: 300px;}
 p.nav-link.font-weight-bold.mb-2.footer-title { font-size: 14px; line-height: 6PX; letter-spacing: 1px;}
 .card.h-100.hood {
     padding: 0;
@@ -178,10 +180,37 @@ p.nav-link.font-weight-bold.mb-2.footer-title { font-size: 14px; line-height: 6P
 object.d-block.w-100.cover-img {
     margin-top: -45px;
 }
+footer.container-fluid.new-bg {
+    position: absolute;
+    top: 2640px;
+    background: #ffeaf3;
+}
+.container-fluid.new-footer-cf-bg {
+	margin-top: 44px;
+    top: 2798px;
+    position: absolute;
+}
 /*RWD*/
+@media(max-width: 1420px){
+.container-fluid.new-footer-cf-bg {
+    margin-top: -74px;
+    top: 2723px;
+    box-sizing: border-box;
+    position: absolute;
+}
+footer.container-fluid.new-bg {
+    position: absolute;
+    top: 2445px;
+    box-sizing: border-box;
+    background: #ffeaf3;
+}
+}
 @media(max-width: 1239px){
 .Yl-Button1 { margin-left: 1%; margin-top: 7%;}
 section.container-fluid.mt-5 {  margin-top: 13% !important;}
+}
+@media(max-width: 1104px){
+
 }
 @media(max-width: 1024px){
 
@@ -205,14 +234,21 @@ section.container-fluid.mt-5 {  margin-top: 13% !important;}
 @media(max-width:414px){
 .col-12.col-sm-6.col-md-4.col-lg-4.col-xl-3.mt-2.hidden,.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-4.mt-2.hidden { display: none;}
 .container.mt-3.footerno { display: none;}
-section.bgcolor-footer { background: #f3f2f2; top:1230px; position: relative;} /*手機版的回首頁按鈕*/
-section.bgcolor-footer { top: 1500px;}
-.Yl-container {  height: 542px;  top: -23%;}
-.sun_banner { width: 100%;  height: 440px;}
-object.coffee { width: 56%; position: absolute; top: 308px; left: 41%;}
+section.bgcolor-footer { background: #f3f2f2; top: 1540px; position: relative;} /*手機版的回首頁按鈕*/
+.Yl-container .Yl-wrapper .Yl-slide.Yl-0 .Yl-font0, .Yl-container .Yl-wrapper .Yl-slide.Yl-1 .Yl-font0, .Yl-container .Yl-wrapper .Yl-slide.Yl-2 .Yl-font0, .Yl-font0.fadeInUp.act {
+    margin-top: -10px !important;}
+.Yl-font0.fadeInUp.act{margin-top: -3px;}
+object.coffee {  width: 61%;  top: 155px;  left: 39%;}
+.Yl-container .Yl-wrapper .Yl-slide.Yl-0 .Yl-font1,.Yl-container .Yl-wrapper .Yl-slide.Yl-0 .Yl-font2,.Yl-font1.r3.fadeInUp.act,.Yl-font2.slideInLeft.act {
+    font-size: 5vmin;
+}
+.Yl-container .Yl-pagination {  bottom: 115px;}
+.sun_banner { height: 450px;}
 section.container-fluid.mt-5 {  margin-top: -4% !important;}
-ul.navbar-nav.mr-auto.navbar-right { height: 245px;}
-.Yl-container .Yl-pagination { height: 8px;}
+
+
+
+
 }
 @media(max-width: 375px){
 footer.container-fluid.new-bg,.container-fluid.new-footer-cf-bg { display: none;}
@@ -224,7 +260,7 @@ footer.container-fluid.new-bg,.container-fluid.new-footer-cf-bg { display: none;
 .carousel-indicators li::after {  position: absolute;  bottom: 88px;  left:-5px !important;  display: inline-block;  width: 100%;  height: 17px !important;
     content: "";}
 .carousel-indicators .active{background: #ffeaf300 ;}
-section.bgcolor-footer { background: #f3f2f2; top:1230px; position: relative;} /*手機版的回首頁按鈕*/
+section.bgcolor-footer { background: #f3f2f2; top: 300px; position: relative;} /*手機版的回首頁按鈕*/
 .sun_banner { height: 300px;  position: relative;  top: -62px;}
 .Yl-container .Yl-wrapper .Yl-slide.Yl-0 .Yl-font0, .Yl-container .Yl-wrapper .Yl-slide.Yl-1 .Yl-font0, .Yl-container .Yl-wrapper .Yl-slide.Yl-2 .Yl-font0, .Yl-font0.fadeInUp.act {
     font-size: 2rem;  margin-top: -5px;}
@@ -236,46 +272,47 @@ section.bgcolor-footer { background: #f3f2f2; top:1230px; position: relative;} /
 .Yl-container { height: 341px;} /*產品介紹圖板面尺寸*/
 .Yl-container .Yl-wrapper .Yl-slide .Yl-img0 { height: 69%;}
 .Yl-container .Yl-wrapper { width: 100%; height: 85%; overflow: hidden; position: relative;}
-object.coffee {
-    width: 51%;
-    position: absolute;
-    top: 131px;
-    left: 45%;
-    animation-name: upword;
-    animation-duration: 5s;
-    animation-timing-function: ease-in;
-    animation-delay: 0s;
+.Yl-container .Yl-wrapper .Yl-slide .Yl-font0, .Yl-container .Yl-wrapper .Yl-slide .Yl-font1, .Yl-container .Yl-wrapper .Yl-slide .Yl-font2, .Yl-font0.fadeInUp.act {
+    margin: -10px auto;
 }
-section.container-fluid.mt-5 {  margin-top: -4% !important;}
+.Yl-font1.fadeInUp.act,.Yl-font2.slideInLeft.act{
+	font-size: 5vmin !important;
+}
+.Yl-container .Yl-wrapper .Yl-slide.Yl-2 .Yl-font2 {
+    font-size: 5vmin;
+}
+object.coffee {  width: 51%;   position: absolute;   top: 131px;   left: 45%;}
+section.bgcolor-footer {   top: 1168px;}
 .col-12.col-sm-6.col-md-4.col-lg-4.col-xl-3.mt-2.hidden,.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-4.mt-2.hidden { display: none;}
-section.container-fluid.new-bgimg {
-    margin-top: -61px;
-}
-.container.mt-3.footerno { display: none;}
-.cover { display: none;}
-
+section.container-fluid.new-bgimg {  margin-top: -16%;}
+section.container-fluid.mt-5 {  margin-top: -4% !important;}
+p.text-center.mt-3.rwd-btn { display: block;}/*rwd時顯示按鈕*/
+p.text-center.mt-3{display: none;}/*rwd時隱藏按鈕*/
+img.ten2 { height: 210px;}
+.row.shadow-sm.pb-3.rounded.height-box {  height: 405px !important;}
+section.container-fluid.new-bgimg.facia { height: auto;}
 }
 @media(max-width: 320px){
 .col-12.col-sm-6.col-md-4.col-lg-4.col-xl-3.mt-2.hidden,.col-12.col-sm-6.col-md-4.col-lg-4.col-xl-4.mt-2.hidden { display: none;}
-.row.shadow-sm.pb-3.rounded { height:370px !important}
+.row.shadow-sm.pb-3.rounded { height:320px !important} /*新品上市圖1外框*/
+img.ten { height: 50%;}/*新品上市圖大小*/
 p.text-center.mt-3 { margin-top: -2rem !important; margin-left: -1rem !important;}
 .border-bottom.left {width: 20%;}
 .border-bottom.right { width: 20%; left: 77%;}
-section.bgcolor-footer { top:1100px;}
+section.bgcolor-footer { top:1080px;}/*手機模式回首頁、購物車、登入*/
 section.container-fluid.new-bgimg { margin-top: -20%;}
 .Yl-font1.fadeInUp.act.r3 { margin: 10% auto !important;}/*產品介紹圖第四頁(文字)*/
 .Yl-font0.fadeInUp.act{margin: 0px auto!important;}/*產品介紹圖第四頁*/
 .Yl-container .Yl-pagination span { width: 3%; height: 90%;}
 p.text-center.mt-3.rwd-btn { display: block;}
 p.text-center.mt-3{display: none;}
-.text-center.pt-3.pb-1.font-weight-bold.text-facia { margin-top: 0px;}
+.text-center.pt-3.pb-1.font-weight-bold.text-facia { margin-top: -3px;}/*招牌推薦文字*/
 .card-body { z-index: 9999;}
 img.ten2 { height: 190px;}
 .row.shadow-sm.pb-3.rounded.height-box { height: 330px !important;}
-section.container-fluid.new-bgimg.facia {  height: 420px;}
+section.container-fluid.new-bgimg.facia {  height: 410px;}/*招牌區塊的背景*/
 object.coffee { width: 57%;  top: 146px;  left: 45%;}
 .Yl-Button1 { margin-top: 15%;}
-.cover { display: none;}
-.card.h-100.hood { height: 85% !important;}
-img.ten { height: 63%;}
+section.container-fluid.mt-5 {  margin-top: -5% !important;}
+
 }
